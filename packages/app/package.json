@@ -19,9 +19,10 @@
     "build:js": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:docker": "docker build -t ${API_IMAGE:-budde377/consuno-app} -f docker/Dockerfile .",
-    "deploy:docker": "docker push ${API_IMAGE:-budde377/consuno-app}",
-    "deploy": "npn run deploy:docker",
+    "build:docker": "docker build -t ${APP_IMAGE:-budde377/consuno-app}:${APP_TAG:-latest} -f docker/Dockerfile .",
+    "deploy:docker": "docker push ${APP_IMAGE:-budde377/consuno-app}:${APP_TAG:-latest}",
+    "deploy:helm": "helm upgrade --set image.repository=${APP_IMAGE:-budde377/consuno-app} --set image.tag=${APP_TAG:-latest} -i consuno-app helm/app",
+    "deploy": "npm run deploy:docker && npm run deploy:helm",
     "build": "npm run build:js && npm run build:docker"
   },
   "eslintConfig": {

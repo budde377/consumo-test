@@ -7,11 +7,13 @@
     "test:jest": "jest",
     "watch:jest": "jest --watch",
     "build:js": "babel src --out-dir dist",
-    "build:docker": "docker build -t ${API_IMAGE:-budde377/consuno-api} -f docker/Dockerfile .",
-    "deploy:docker": "docker push ${API_IMAGE:-budde377/consuno-api}",
-    "deploy": "npn run deploy:docker",
+    "build:docker": "docker build -t ${API_IMAGE:-budde377/consuno-api}:${API_TAG:-latest} -f docker/Dockerfile .",
+    "deploy:docker": "docker push ${API_IMAGE:-budde377/consuno-api}:${API_TAG:-latest}",
+    "deploy:helm": "helm upgrade --set image.repository=${API_IMAGE:-budde377/consuno-api} --set image.tag=${API_TAG:-latest} -i consuno-api helm/api",
+    "deploy": "npm run deploy:docker && npm run deploy:helm",
     "build": "npm run build:js && npm run build:docker",
-    "generate-data": "cd data && ../scripts/generate-data.js"
+    "generate-data": "cd data && ../scripts/generate-data.js",
+    "start": "node dist"
   },
   "dependencies": {
     "apollo-server": "^2.5.0",

@@ -3,5 +3,9 @@
   "private": true,
   "devDependencies": {
     "lerna": "^3.13.1"
+  },
+  "scripts": {
+    "build": "API_TAG=$(git rev-parse HEAD) APP_TAG=$(git rev-parse HEAD) lerna run build",
+    "deploy": "API_TAG=$(git rev-parse HEAD) APP_TAG=$(git rev-parse HEAD) lerna run deploy"
   }
 }
