@@ -2,7 +2,15 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.13.1"
+    "husky": "^2.2.0",
+    "lerna": "^3.13.1",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna exec -- pretty-quick --staged"
+    }
   },
   "scripts": {
     "build": "API_TAG=$(git rev-parse HEAD) APP_TAG=$(git rev-parse HEAD) lerna run build",
