@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna exec -- pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "scripts": {
