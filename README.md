@@ -29,7 +29,10 @@ hooks, as recommended by React.
 The hooks can be found in `/src/hooks` and currently only contains a single user-derfined hook: `useThrottled` which
 throttles state.
 
-Testing is done with Jest.
+Testing is done with Jest using `react-test-renderer`.
+
+The App is deployed on kubernetes as a Dockerfile using helm. This is build and deployed using the command `npm run buildanddeploy`.
+It is currently hosted at [http://app.consuno.budde377.io](https://app.consuno.budde377.io).
 
 ## Future works
 
