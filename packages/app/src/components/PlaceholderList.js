@@ -1,4 +1,11 @@
-import { Description, List, ListItem, Placeholder, Thumb } from '../styled';
+import {
+  Description,
+  List,
+  ListItem,
+  Placeholder,
+  Tags,
+  Thumb,
+} from '../styled';
 import React from 'react';
 
 export default () => (
@@ -8,18 +15,21 @@ export default () => (
       <Description>
         <Placeholder />
       </Description>
+      <Tags />
     </ListItem>
     <ListItem>
       <Thumb />
       <Description>
         <Placeholder />
       </Description>
+      <Tags />
     </ListItem>
     <ListItem>
       <Thumb />
       <Description>
         <Placeholder />
       </Description>
+      <Tags />
     </ListItem>
   </List>
 );

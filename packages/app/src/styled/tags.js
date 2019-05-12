@@ -21,6 +21,7 @@ export const Tag = styled.li`
 export const Tags = styled.ul`
   list-style-type: none;
   display: flex;
+  min-height: 1.4em;
   margin: -0.5em;
   padding: 0;
   flex-wrap: wrap;
