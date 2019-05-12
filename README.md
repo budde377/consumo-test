@@ -34,6 +34,10 @@ Testing is done with Jest using `react-test-renderer`.
 The App is deployed on kubernetes as a Dockerfile using helm. This is build and deployed using the command `npm run buildanddeploy`.
 It is currently hosted at [http://app.consuno.budde377.io](https://app.consuno.budde377.io).
 
+# Running
+
+Run the project locally with the command `npm run dev`.
+
 ## Future works
 
 - Implement client-side pagination.

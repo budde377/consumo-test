@@ -13,6 +13,7 @@
     }
   },
   "scripts": {
+    "dev": "lerna run dev --parallel",
     "build": "API_TAG=$(git rev-parse HEAD) APP_TAG=$(git rev-parse HEAD) lerna run build",
     "deploy": "API_TAG=$(git rev-parse HEAD) APP_TAG=$(git rev-parse HEAD) lerna run deploy",
     "buildanddeploy": "API_TAG=$(git rev-parse HEAD) APP_TAG=$(git rev-parse HEAD) lerna run buildanddeploy"
