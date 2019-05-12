@@ -23,7 +23,8 @@
     "deploy:docker": "docker push ${APP_IMAGE:-budde377/consuno-app}:${APP_TAG:-latest}",
     "deploy:helm": "helm upgrade --set image.repository=${APP_IMAGE:-budde377/consuno-app} --set image.tag=${APP_TAG:-latest} -i consuno-app helm/app",
     "deploy": "npm run deploy:docker && npm run deploy:helm",
-    "build": "npm run build:js && npm run build:docker"
+    "build": "npm run build:js && npm run build:docker",
+    "buildanddeploy": "npm run build && npm run deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

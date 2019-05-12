@@ -12,8 +12,9 @@
     "deploy:helm": "helm upgrade --set image.repository=${API_IMAGE:-budde377/consuno-api} --set image.tag=${API_TAG:-latest} -i consuno-api helm/api",
     "deploy": "npm run deploy:docker && npm run deploy:helm",
     "build": "npm run build:js && npm run build:docker",
-    "generate-data": "cd data && ../scripts/generate-data.js",
-    "start": "node dist"
+    "generate-data": "./scripts/generate-data.js",
+    "start": "node dist",
+    "buildanddeploy": "npm run generate-data && npm run build && npm run deploy"
   },
   "dependencies": {
     "apollo-server": "^2.5.0",

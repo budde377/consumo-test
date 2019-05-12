@@ -1,4 +1,4 @@
-import data from '../data/dump'
+import data from '../dump'
 
 export default class Db {
 

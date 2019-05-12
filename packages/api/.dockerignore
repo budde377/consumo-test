@@ -4,4 +4,4 @@
 !package.json
 !package-lock.json
 !graphql
-!data
+!dump.json
