@@ -1,0 +1,46 @@
+type Query {
+  listCompanies(after: Cursor first: Int = 10 filter: CompanyFilter): CompanyConnection!
+}
+
+input CompanyFilter {
+  name: String
+  speciality: [CompanySpeciality!]
+}
+
+type CompanyConnection {
+  edges: [CompanyConnectionEdge!]!
+  pageInfo: PageInfo!
+}
+
+type CompanyConnectionEdge {
+  cursor: Cursor!
+  node: Company!
+}
+
+type Company {
+  id: ID!
+  name: String!
+  logo: Image!
+  speciality: CompanySpeciality
+  city: String!
+}
+
+type Image {
+  width: Int!
+  height: Int!
+  url: String!
+}
+
+enum CompanySpeciality {
+  EXCAVATION
+  PLUMBING
+  ELECTRICAL
+}
+
+scalar Cursor
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  totalCount: Int!
+}

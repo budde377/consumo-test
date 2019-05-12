@@ -1,0 +1,6 @@
+**
+!docker
+!dist
+!package.json
+!package-lock.json
+!graphql
